@@ -1,0 +1,26 @@
+<head>
+  <title>Wenatchee Facts</title>
+</head>
+
+<body>
+    <div id="bg">
+        <img src="/wenatchee.jpg">
+    </div>
+    <div id="content">
+        {{> fact}}
+        <div id="buttons">
+            <input type="button" id="new" value="Learn New Fact" />
+            <input type="button" id="submit" value="Submit a Fact" />
+        </div>
+    </div>
+    <div id="credits">
+      <a href="">Credits</a> | 
+      <a href="http://www.wenatcheewa.gov/">Visit Wenatchee</a>
+    </div>
+</body>
+
+<template name="fact">
+    <h1 id="fact">
+        {{random_fact}}
+    </h1>
+</template>

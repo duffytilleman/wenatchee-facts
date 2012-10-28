@@ -43,6 +43,8 @@ input[type=button]:hover {
     position: absolute;
     left: 20px;
     bottom: 20px;
+}
+#credits, .login-link-text, .login-close-text {
     font-size: 14px;
     color: rgba(1,0,0,0.5);
 }
@@ -106,4 +108,17 @@ input[type=button]:hover {
 }
 .modal-footer a:hover {
     color: black;
+}
+
+#login-buttons {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+}
+#login-buttons .login-close-text {
+    float: right;
+}
+#login-dropdown-list {
+    right: 1px;
+    left: auto;
 }

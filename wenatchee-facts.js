@@ -42,6 +42,14 @@ if (Meteor.isClient) {
         }
     });
 
+    Template.footer.events({
+        'click #show-credits': function(e) {
+            Session.set('showCredits', true);
+            e.preventDefault();
+        }
+    });
+
+
     var openCreateDialog = function () {
         Session.set("submitError", null);
         Session.set("showSubmitDialog", true);
@@ -49,6 +57,10 @@ if (Meteor.isClient) {
 
     Template.page.showSubmitDialog = function () {
         return Session.get("showSubmitDialog");
+    };
+
+    Template.page.showCredits = function () {
+        return Session.get("showCredits");
     };
 
     Template.submitFact.rendered = function() {
@@ -74,6 +86,15 @@ if (Meteor.isClient) {
             Session.set("showSubmitDialog", false);
         }
     });
+
+    Template.credits.events({
+        'click .cancel': function(){
+            Session.set('showCredits', false);
+        }
+    });
+    Template.credits.rendered = function(){
+        console.log('credits rendered');
+    };
 }
 
 if (Meteor.isServer) {

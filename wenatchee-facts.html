@@ -13,15 +13,23 @@
     <div id="content">
         {{> fact}}
     </div>
+    {{> footer}}
+    {{ loginButtons }}
+</body>
+
+<template name="footer">
     <div id="credits">
-        <a href="">Credits</a> | 
+        <a href="" id="show-credits">Credits</a> |
         <a href="http://www.wenatcheewa.gov/">Visit Wenatchee</a>
     </div>
-</body>
+</template>
 
 <template name="page">
     {{#if showSubmitDialog }}
         {{> submitFact }}
+    {{/if}}
+    {{#if showCredits }}
+        {{> credits }}
     {{/if}}
 </template>
 
@@ -55,6 +63,33 @@
                 <a href="#" class="btn cancel">Cancel</a>
                 <a href="#" class="btn btn-primary save">Submit</a>
             </div>
+        </div>
+    </div>
+</template>
+
+<template name="credits">
+    <div class="mask"> </div>
+    <div class="modal-wrapper">
+        <div class="modal">
+            <button type="button" class="close cancel">&times;</button>
+            <p>
+                Site built by <a href="https://github.com/duffytilleman">Duffy Tilleman</a>
+                using <a href="http://meteor.com">Meteor</a>.
+            </p>
+            <p>
+                Background Photo credit:<br/>
+                <a href="http://www.flickr.com/photos/cronncc/">Curtis Cronn</a>
+                <a href="http://creativecommons.org/licenses/by-nc-nd/2.0/">CC Attribution Non-Commercial No-Deriviatives v2.0</a>
+            </p>
+            <p>
+                Facts are not guaranteed to be true.
+            </p>
+            <p>
+                The wenatcheefacts.com site is not affiliated in any way with
+                the city of Wenatchee, WA, except in that we think it's a
+                really nice place and you should visit. Definitely don't go to
+                Leavenworth though, it's not nearly as nice.
+            </p>
         </div>
     </div>
 </template>
